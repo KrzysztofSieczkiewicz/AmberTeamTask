@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.4'
+
+    // Just for irrelevant ChromeDriver messages
+    testImplementation 'org.slf4j:slf4j-simple:1.7.36'
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
