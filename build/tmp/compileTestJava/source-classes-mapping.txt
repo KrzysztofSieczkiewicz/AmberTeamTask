@@ -1,0 +1,8 @@
+AntyCaptcha_Exercise_2.java
+ AntyCaptcha_Exercise_2
+AntyCaptcha_Exercise_1.java
+ AntyCaptcha_Exercise_1
+AntyCaptcha_Exercise_4.java
+ AntyCaptcha_Exercise_4
+AntyCaptcha_Exercise_3.java
+ AntyCaptcha_Exercise_3

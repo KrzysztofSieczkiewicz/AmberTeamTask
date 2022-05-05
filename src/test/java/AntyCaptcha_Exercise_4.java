@@ -36,7 +36,6 @@ public class AntyCaptcha_Exercise_4 {
         String buttonText;
         for(int i = 0; i<buttonsList.size(); i++) {
             numberString = Integer.toString(i);
-            System.out.println(numberString);
             buttonText = buttonsList.get(i).getText();
 
             WebElement givenRadio = driver.findElement(By.xpath("//div[h5[contains(text(), 'Group "+numberString+":')]]/text()[contains(., '"+buttonText+"')]/preceding-sibling::input[1]"));
@@ -52,7 +51,7 @@ public class AntyCaptcha_Exercise_4 {
         checkResult.click();
 
         // Wait until text changes, and get website answer
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(500));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(750));
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(By.xpath("//*[@id=\"trail\"]/code"), actualTrail)));
         actualResultCode = driver.findElement(By.xpath("//*[@id=\"trail\"]/code"));
         String websiteAssertion = actualResultCode.getText();
