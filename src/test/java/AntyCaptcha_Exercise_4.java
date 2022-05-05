@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,7 +48,8 @@ public class AntyCaptcha_Exercise_4 {
         String actualTrail = actualResultCode.getText();
 
         // Find and click on "check result"
-        driver.findElement(By.xpath("//*[@id=\"solution\"]")).click();
+        WebElement checkResult = driver.findElement(By.xpath("//*[@id=\"solution\"]"));
+        checkResult.click();
 
         // Wait until text changes, and get website answer
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(500));
@@ -67,5 +65,10 @@ public class AntyCaptcha_Exercise_4 {
     @AfterEach
     public void cleanUp() {
         driver.close();
+    }
+
+    @AfterAll
+    public static void clean() {
+        driver.quit();
     }
 }
